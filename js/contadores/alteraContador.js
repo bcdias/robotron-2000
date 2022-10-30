@@ -4,7 +4,8 @@ import subtrairAtributo from "./subtrairAtributo.js";
 function alteraContador(operacao, contador){
     const valorCotador = parseInt(contador.value)
     const novoValor = operacoes[operacao](valorCotador)
-    contador.value = novoValor
+    const contadorAlterado = contador.value = novoValor
+    return contadorAlterado
 }
 
 const operacoes = {

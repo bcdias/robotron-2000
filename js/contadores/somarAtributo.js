@@ -1,5 +1,6 @@
-function somarAtributo(atributo){
-    return atributo + 1
+function somarAtributo(valorCotador){
+    const contador = valorCotador + 1
+    return contador
  }
  
  export default somarAtributo
