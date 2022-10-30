@@ -4,7 +4,6 @@ import alteraContador from "./contadores/alteraContador.js";
 import limparContador from "./contadores/limparContador.js";
 import alteraEstatistica from "./estatisticas/alteraEstatistica.js";
 import verificaPeca from "./estatisticas/verificaPeca.js"
-import pecas from "../data/estatisticas.js";
 import limparEstatisticas from "./estatisticas/limparEstatisticas.js";
 
 // Percorrendo DOM
@@ -37,7 +36,7 @@ controleAjuste.forEach(elemento => {
 
         // altera contadore e estatísticas
         alteraContador(operacao, contadorPeca)   
-        alteraEstatistica(operacao, pecas, peca, estatisticas)          
+        alteraEstatistica(operacao, peca, estatisticas)          
     })
 });
 

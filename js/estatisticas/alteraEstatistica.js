@@ -1,6 +1,9 @@
-// import pecas from "../data/estatisticas.js";
+import pecas from "../../data/estatisticas.js";
+import somar from "../operacoes/somar.js";
+import subtrair from "../operacoes/subtrair.js";
 
-function alteraEstatistica(operacao, pecas, peca, estatisticas) {
+function alteraEstatistica(operacao, peca, estatisticas) {
+
     estatisticas.forEach(element => {
         const pecaRobo = peca
         const atributo = element.dataset.estatistica
@@ -8,9 +11,8 @@ function alteraEstatistica(operacao, pecas, peca, estatisticas) {
         const bonus = pecas[pecaRobo][atributo]
 
 
-        const mudaEstatistica = operacoes[operacao](valorAtributo, bonus)
-
-        const novaEstatistica = element.textContent = mudaEstatistica
+        const somatorio = operacoes[operacao](valorAtributo, bonus)
+        const novaEstatistica = element.textContent = somatorio
 
     });
 }
@@ -20,13 +22,4 @@ const operacoes = {
     subtrair: subtrair
 }
 
-function somar(valorAtributo, bonus) {
-    const novaEstatistica = valorAtributo + bonus
-    return novaEstatistica
-}
-
-function subtrair(valorAtributo, bonus) {
-    const novaEstatistica = valorAtributo - bonus
-    return novaEstatistica
-}
 export default alteraEstatistica

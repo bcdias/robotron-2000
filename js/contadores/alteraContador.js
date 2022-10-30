@@ -1,17 +1,16 @@
-import somarAtributo from "./somarAtributo.js";
-import subtrairAtributo from "./subtrairAtributo.js";
+import somar from "../operacoes/somar.js";
+import subtrair from "../operacoes/subtrair.js";
 
 function alteraContador(operacao, contador){
     const valorCotador = parseInt(contador.value)
-    const novoValor = operacoes[operacao](valorCotador)
+    const novoValor = operacoes[operacao](valorCotador, 1)
     const contadorAlterado = contador.value = novoValor
-    return contadorAlterado
 }
 
 const operacoes = {
 
-    somar: somarAtributo,
-    subtrair: subtrairAtributo
+    somar: somar,
+    subtrair: subtrair
 }
 
 export default alteraContador
