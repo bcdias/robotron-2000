@@ -1,5 +1,6 @@
-function somar(valor1, valor2){
-    const contador = valor1 + valor2
+function somar(valorContador, valor){
+    
+    const contador = valorContador + valor
     return contador
  }
  
