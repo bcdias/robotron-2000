@@ -53,7 +53,7 @@ controleAjuste.forEach(elemento => {
 
         // altera contadores e estatísticas
         alteraPontosDisponieis(operacao, pontosDiponiveis)
-        alteraContador(operacao, contador, pontosDiponiveis)
+        alteraContador(operacao, contador)
         alteraEstatistica(operacao, peca, estatisticas)
     })
 });

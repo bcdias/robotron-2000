@@ -1,4 +1,4 @@
-function restauraContador(contadores){
+function restauraContador(contadores) {
     contadores.forEach(contador => {
         contador.value = 0
     })

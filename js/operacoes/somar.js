@@ -1,7 +1,7 @@
-function somar(valorContador, valor){
-    
+function somar(valorContador, valor) {
+
     const contador = valorContador + valor
     return contador
- }
- 
- export default somar
+}
+
+export default somar
