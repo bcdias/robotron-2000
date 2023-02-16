@@ -1,4 +1,4 @@
-import verificaOperacao from "./contadores/verificaOperacao.js";
+import verificaOperacao from "./verificacoe/verificaOperacao.js";
 import capturaContador from "./contadores/capturaContador.js";
 import alteraContador from "./contadores/alteraContador.js";
 import restauraContador from "./contadores/restauraContador.js";
@@ -7,6 +7,7 @@ import verificaPeca from "./estatisticas/verificaPeca.js"
 import restauraEstatisticas from "./estatisticas/restauraEstatisticas.js";
 import alteraPontosDisponieis from "./contadores/alteraPontosDisponiveis.js";
 import resetaPontosDisponiveis from "./contadores/restauraPontosDisponiveis.js";
+import podeAlterarContador from "./verificacoe/podeAlterarContador.js";
 
 // Percorrendo DOM
 const controleAjuste = document.querySelectorAll('[data-ajuste]')
@@ -41,20 +42,14 @@ controleAjuste.forEach(elemento => {
         const peca = verificaPeca(evento)
 
         // Verifica disponibilidade de pontos
-        if (operacao == 'somar' && pontosDiponiveis.value == 0) {
-            return
-        }
-        if (operacao == 'subtrair' && pontosDiponiveis.value == 40) {
-            return
-        }
-        if (operacao == 'subtrair' && pontosDiponiveis.value == 0 && parseInt(contador.value) == 0) {
-            return
-        }
+        const ehAlterarContador = podeAlterarContador(operacao ,pontosDiponiveis, contador)
 
         // altera contadores e estatísticas
-        alteraPontosDisponieis(operacao, pontosDiponiveis)
-        alteraContador(operacao, contador)
-        alteraEstatistica(operacao, peca, estatisticas)
+        if(ehAlterarContador){
+            alteraPontosDisponieis(operacao, pontosDiponiveis)
+            alteraContador(operacao, contador)
+            alteraEstatistica(operacao, peca, estatisticas)
+        }
     })
 });
 
