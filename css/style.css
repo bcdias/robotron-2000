@@ -133,9 +133,9 @@ main {
 
 .restaura{
     margin: 1em 0.5em 0 0;
-    font-size: 1.7em;
+    font-size: 1.25em;
     text-transform: uppercase;
-    padding: 0.2em 1em;
+    padding: .5em 1em;
     border: 3px solid var(--main-branco);
     background: var(--main-branco);
     clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
